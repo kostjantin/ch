@@ -1,0 +1,14 @@
+{
+    "name": "kostjantin/ch",
+    "description": "Own realisation of captcha on php8",
+    "require": {
+        "symfony/debug": "^4.4"
+    },
+    "authors": [
+        {
+            "name": "Kostiantin Muliar",
+            "email": "kostjantin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
