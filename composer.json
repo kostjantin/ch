@@ -2,8 +2,9 @@
   "name": "kostjantin/ch",
   "description": "Own realisation of captcha on php8",
   "require": {
-    "symfony/debug": "^4.4",
-    "ext-gd": "*"
+    "ext-gd": "*",
+    "symfony/var-dumper": "^5.2",
+    "ext-imagick": "*"
   },
   "authors": [
     {
@@ -11,5 +12,10 @@
       "email": "kostjantin@gmail.com"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
   "minimum-stability": "stable"
 }
