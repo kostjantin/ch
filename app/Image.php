@@ -19,14 +19,14 @@ class Image
         imagecolorallocate($this->im, 255, 255, 255);
     }
 
-    public function writeChar(
+    public function writeWord(
         float $size,
         float $angel,
         int $x,
         int $y,
         array $textColorRGB,
         string $font,
-        string $char
+        string $word
     ): void
     {
         $textColor = imagecolorallocate($this->im, ...$textColorRGB);
@@ -39,7 +39,7 @@ class Image
             $y,
             $textColor,
             $font,
-            $char
+            $word
         );
     }
 

@@ -20,7 +20,7 @@ class Captcha
         $fontsList = $this->fonts->getAll();
 
         for ($i = 0; $i < strlen($this->value); $i++) {
-            $this->img->writeChar(
+            $this->img->writeWord(
                 30 + rand(-5, 5),
                 0 + rand(-250, 250) / 10,
                 $i * rand(35, 40) + 5,
