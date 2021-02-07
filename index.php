@@ -3,8 +3,6 @@ require_once "vendor/autoload.php";
 
 header("Content-Type: image/png");
 
-$img  = new Imagick();
-
 $captchaValue = (string)rand(10000, 99999);
 
 $captcha = new \App\Captcha(
