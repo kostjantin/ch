@@ -6,9 +6,16 @@ namespace App;
 
 class Fonts
 {
-    public function __construct($path)
+    private string $pathToFonts;
+
+    public function __construct(string $path)
     {
-        putenv('GDFONTPATH=' . $path . DIRECTORY_SEPARATOR . 'resources/fonts');
+        $this->pathToFonts = $path . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'fonts';
+    }
+
+    public function getPath(): string
+    {
+        return $this->pathToFonts;
     }
 
     public function getAll(): array

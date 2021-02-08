@@ -5,14 +5,13 @@ session_start();
 
 header("Content-Type: image/png");
 
-$captchaValue = (string)rand(10000, 99999);
+$_SESSION['captcha'] = $captchaValue = (string)rand(10000, 99999);
 
-$_SESSION['captcha'] = $captchaValue;
-
-$captcha = new \App\Captcha(
+$captcha = new \App\CaptchaGenerator(
     new \App\Image(),
     new \App\Fonts(__DIR__),
     $captchaValue,
 );
+
 $captcha->create();
-$captcha->getImage()->outputPNG();
+$captcha->img->outputPNG();

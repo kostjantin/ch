@@ -11,12 +11,15 @@ class Image
      */
     private $im;
 
-    public function __construct(
-        private string $font = 'arial',
-    )
+    public function __construct()
     {
         $this->im = @imagecreate(200, 50);
         imagecolorallocate($this->im, 255, 255, 255);
+    }
+
+    public function addGdFontPath($pathToFonts)
+    {
+        putenv('GDFONTPATH=' . $pathToFonts);
     }
 
     public function writeWord(
@@ -52,5 +55,4 @@ class Image
     {
         imagepng($this->im);
     }
-
 }

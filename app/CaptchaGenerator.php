@@ -4,15 +4,16 @@
 namespace App;
 
 
-class Captcha
+class CaptchaGenerator
 {
 
     public function __construct(
-        private Image $img,
+        public Image $img,
         private Fonts $fonts,
         private string $value,
     )
     {
+        $this->img->addGdFontPath($this->fonts->getPath());
     }
 
     public function create(): void
@@ -30,10 +31,5 @@ class Captcha
                 $this->value[$i]
             );
         }
-    }
-
-    public function getImage(): Image
-    {
-        return $this->img;
     }
 }
